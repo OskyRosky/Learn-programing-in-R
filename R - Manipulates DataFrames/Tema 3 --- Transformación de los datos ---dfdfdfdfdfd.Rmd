@@ -1,0 +1,174 @@
+---
+title: "Tema 3: transformacion de los datos"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+suppressWarnings(library(magrittr))
+suppressWarnings(library(dplyr))
+suppressWarnings(library(readxl))
+
+setwd("C:/Users/oscar/Desktop/R --- SAF/Tema 3")
+
+data <- read_excel("data.xlsx")
+
+```
+
+<style>
+table {
+background-color:#FFFFFF;
+}
+</style>
+
+<style>
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
+    background-color: darkblue;
+}
+</style>
+
+<button onclick="document.body.scrollTop = document.documentElement.scrollTop = 0;" style="
+    position: fixed;
+    bottom: 5px;
+    right: 40px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #0A71A0;
+    border: none;
+    border-radius: 15px;
+    
+">Ir arriba</button>
+
+# {.tabset .tabset-fade .tabset-pills}
+
+El presente tema expone la transformación de los datos.  Se abordarán los puntos:
+
+- Los pipes.
+- Verficar y cambiar los tipos de variables.
+- Transformación de los datos utilizando el paquete dplyr.
+- Transformación de los variables de tipo caracter.
+- Transformación de los datos utilizando el paquete tidyr.
+
+
+
+Al finalizar la sesión se estará en completa capacidad para transformar cualquier archivo de datos, para así próximente ser analizado de forma descriptiva (tablas, gráficos, etc.) o mediante 
+
+## Los pipes {.tabset .tabset-fade .tabset-pills}
+
+El uso de los pipes es una de tantas alternativas en la transformación y trabamiento de los datos. Los utilizaremos bastantem por lo que sería bueno explicar qué son, de dónde provienen, cuándo utilizarlos y cuando NO utilizarlos.
+
+### ¿Qué son los pipes?
+
+Los pipes son una herramienta poderosa para expresar una secuencia de operaciones en diversas funciones. Se utilizan tanto en el tratamiento, trasformación y otros relacionados con la data como la presentación tabular y gráfica.
+
+![](pipe.png)
+
+
+
+### ¿De dónde provienen?
+
+Provienen de tres corrientes de pensamiento:
+
+- Matemática
+- Informática
+- Programación en R
+
+Fue creado por Stefan Bache, y propuesta bajo para la librería de magrittr. Más adelante fue incorporado en la librería dplyr dado que magrittr es una dependencia de esta. 
+
+¿Qué entendemos por depedencia de una librería?
+
+Para utilizar el pipe debemos por lo tanto utilizar alguna de las siguientes librerías
+
+```{r }
+suppressWarnings(library(magrittr))
+suppressWarnings(library(dplyr))
+```
+
+Cargas las librerías, podemos utilizar el operador pipe
+
+```{r eval = FALSE}
+%>%
+```
+
+
+### ¿Cómo funciona?
+
+```{r echo=TRUE}
+setwd("C:/Users/oscar/Desktop/R --- SAF/Tema 3")
+data <- read_excel("data.xlsx")
+
+data%>%
+     subset(ingreso1 > 4000)
+```
+
+
+
+```{r}
+
+data %>%
+     subset(ingreso1 > 4000)
+     
+    
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Cambiando los tipo de variables {.tabset .tabset-fade .tabset-pills}
+
+### Tipos de variable
+
+### Cambindo los variables
+
+
+
+## Transformación de variables  {.tabset .tabset-fade .tabset-pills}
+
+### Manipulando casos
+
+### Manipulando variables
+
+### Resumiendo los casos
+
+### Agrupando los casos
+
+### Creando nuevas variables
+
+#### A partir de medidas resúmenes.
+
+#### A partir de funciones
+
+#### A partir de conficiones
+
+
+### Las variables caracter
+
+### Diversas manipulaciones
+
+
+### Combinando tablas 
+
+
+## Reformando el archivo de datos {.tabset .tabset-fade .tabset-pills} 
+
+### Las tablas tibbles
+
+### Reformar la horientación 
+
+### Tratando los NA
+
+### Los separadores
+
+
